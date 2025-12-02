@@ -16,19 +16,30 @@ export default function LandingPage() {
       </View>
 
       <View style={styles.textBlock}>
-        <Text style={styles.title}>KisanBazaar</Text>
-        <Text style={styles.subtitle}>Sab Kuch Kheti Ka 🌾</Text>
+        <Text style={styles.slogan1}>Sab Kuch Kheti Ka...</Text>
+        <Text style={styles.slogan2}>Smart Farming. Smart Earning</Text>
       </View>
 
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.push("/home")}
-      >
-        <Text style={styles.buttonText}>Get Started</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        
+        <TouchableOpacity
+          style={styles.loginButton}
+          onPress={() => router.push("/login")}
+        >
+          <Text style={styles.loginButtonText}>Login</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => router.push("/login")}>
-        <Text style={styles.loginText}>Already have an account? Login</Text>
+        <TouchableOpacity
+          style={styles.signupButton}
+          onPress={() => router.push("/signup")} 
+        >
+          <Text style={styles.signupButtonText}>Create New Account</Text>
+        </TouchableOpacity>
+
+      </View>
+      
+      <TouchableOpacity onPress={() => router.push("/home")}>
+         <Text style={styles.guestText}>Continue as Guest</Text>
       </TouchableOpacity>
 
     </View>
@@ -42,18 +53,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#E3F7DF", 
     alignItems: "center",
-    paddingTop: 120,
+    paddingTop: 100, 
+    paddingHorizontal: 30, 
   },
 
   logoContainer: {
-    width: width * 0.55,
-    height: width * 0.55,
+    width: width * 0.60, 
+    height: width * 0.60,
     backgroundColor: "#FFFFFF",
-    borderRadius: width * 0.30,
-    elevation: 8,
+    borderRadius: (width * 0.60) / 2, 
+    elevation: 12, 
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.20,
+    shadowRadius: 12,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 30,
+    marginBottom: 45, 
   },
 
   logo: {
@@ -63,41 +79,72 @@ const styles = StyleSheet.create({
 
   textBlock: {
     alignItems: "center",
-    marginBottom: 40,
+    marginBottom: 60, 
   },
 
-  title: {
-    fontSize: 32,
-    fontWeight: "800",
-    color: "#1B5E20",
-    letterSpacing: 1,
+  slogan1: {
+    fontSize: 22,
+    fontFamily:'outfit-bold',
+    color: "#1B5E20", 
+    letterSpacing: 0.5,
+    marginBottom: 5, 
   },
-
-  subtitle: {
+  
+  slogan2: {
     fontSize: 16,
-    marginTop: 8,
-    color: "#4CAF50",
+    fontFamily: 'outfit-bold',
+    color: "#4CAF50", 
+    textAlign: 'center',
   },
 
-  button: {
-    backgroundColor: "#2E7D32",
-    paddingVertical: 14,
-    paddingHorizontal: 60,
+  buttonContainer: {
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 25, 
+  },
+
+  loginButton: {
+    width: '90%', 
+    backgroundColor: "#2E7D32", 
+    paddingVertical: 16,
     borderRadius: 30,
     marginBottom: 15,
-    elevation: 4,
+    elevation: 5,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
   },
 
-  buttonText: {
+  loginButtonText: {
     color: "#fff",
     fontSize: 18,
-    fontWeight: "600",
+    fontFamily: 'outfit-bold',
+    textAlign: 'center',
   },
 
-  loginText: {
+  signupButton: {
+    width: '90%',
+    backgroundColor: "transparent", 
+    paddingVertical: 16,
+    borderRadius: 30,
+    borderWidth: 2, 
+    borderColor: "#4CAF50",
+  },
+
+  signupButtonText: {
+    color: "#2E7D32", 
+    fontSize: 18,
+    fontFamily: 'outfit-regular',
+    textAlign: 'center',
+  },
+
+  guestText: {
     fontSize: 14,
-    color: "#1B5E20",
+    color: "#2E7D32",
     textDecorationLine: "underline",
     textAlign: "center",
+    marginTop: 15,
+    fontFamily: 'outfit-regular',
   },
 });
