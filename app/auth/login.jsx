@@ -58,7 +58,7 @@ export default function LoginPage() {
             {/* Login Button */}
             <TouchableOpacity 
               style={styles.loginButton}
-              onPress={() => { /* Handle login logic here */ router.push("/home") }}
+              onPress={() => { /* Handle login logic here */ router.push("/home/home") }}
             >
               <Text style={styles.loginButtonText}>Login</Text>
             </TouchableOpacity>

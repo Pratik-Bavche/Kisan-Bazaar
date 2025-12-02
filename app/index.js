@@ -24,21 +24,21 @@ export default function LandingPage() {
         
         <TouchableOpacity
           style={styles.loginButton}
-          onPress={() => router.push("/login")}
+          onPress={() => router.push("/auth/login")}
         >
           <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.signupButton}
-          onPress={() => router.push("/signup")} 
+          onPress={() => router.push("/auth/signup")} 
         >
           <Text style={styles.signupButtonText}>Create New Account</Text>
         </TouchableOpacity>
 
       </View>
       
-      <TouchableOpacity onPress={() => router.push("/home")}>
+      <TouchableOpacity onPress={() => router.push("/home/home")}>
          <Text style={styles.guestText}>Continue as Guest</Text>
       </TouchableOpacity>
 
